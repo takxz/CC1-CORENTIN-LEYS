@@ -30,3 +30,17 @@ def associationMotClef():
     association = [(mot_trie[i], cle_alphabet[i]) for i in range(len(mot_trie))]
     return association
 
+
+def decodage():
+    association = associationMotClef()
+    mot_decode = []
+
+
+    for mot in splittedTextAcien:
+        for cle in association:
+            if cle[0] == mot:
+                mot_decode.append(cle[1])
+                break
+    print(" ".join(mot_decode))
+
+decodage()
